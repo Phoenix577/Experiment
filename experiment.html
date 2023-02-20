@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		form {
+			margin-top: 50px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		label {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		input[type="number"] {
+			font-size: 18px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px #888;
+			margin-bottom: 20px;
+			width: 300px;
+			text-align: center;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			font-size: 20px;
+			border: none;
+			border-radius: 5px;
+			padding: 10px;
+			box-shadow: 2px 2px 5px #888;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		p {
+			font-size: 24px;
+			font-weight: bold;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Currency Converter</h1>
+	<form>
+		<label>Enter amount in rupees:</label>
+		<input type="number" id="rupees" placeholder="Enter amount in rupees">
+		<button type="button" onclick="convert()">Convert</button>
+	</form>
+	<p id="result"></p>
+	<script>
+		function convert() {
+			const rupees = document.getElementById("rupees").value;
+			const dollars = rupees / 75.06; // 1 USD = 75.06 INR (as of September 2021)
+			document.getElementById("result").innerHTML = rupees + " rupees is equal to " + dollars.toFixed(2) + " dollars";
+		}
+	</script>
+</body>
+</html>
